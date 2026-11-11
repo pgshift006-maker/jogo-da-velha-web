@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Velha — jogue no navegador</title>
+  <meta name="description" content="Jogo da velha em Python para dois jogadores, rodando direto no navegador.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151a23'/%3E%3Cpath d='M9 9l14 14M23 9L9 23' stroke='%23ffb454' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="pagina">
+    <header class="topo">
+      <h1>Jogo da Velha</h1>
+      <p class="sub">Dois jogadores, X e O, na mesma tela. É o programa em Python do trabalho rodando aqui no navegador.</p>
+    </header>
+
+    <section class="terminal" aria-label="Terminal do jogo">
+      <div class="terminal-barra" aria-hidden="true">
+        <span class="ponto"></span><span class="ponto"></span><span class="ponto"></span>
+        <span class="terminal-titulo">python main.py</span>
+      </div>
+
+      <div id="saida" class="saida" role="log" aria-live="polite" aria-relevant="additions" tabindex="0">
+        <div class="linha suave" id="carregando">Carregando o Python… (cerca de 14 MB, só na primeira vez)</div>
+      </div>
+
+      <form id="entrada-form" class="entrada" hidden autocomplete="off">
+        <label for="entrada" id="prompt" class="prompt"></label>
+        <div class="entrada-linha">
+          <input id="entrada" name="entrada" type="text" inputmode="numeric" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="40">
+          <button type="submit" class="botao principal">Enviar</button>
+        </div>
+        <div id="atalhos" class="atalhos" aria-label="Respostas rápidas"></div>
+      </form>
+
+      <div id="fim" class="fim" hidden>
+        <span>Programa encerrado.</span>
+        <button type="button" id="recomecar" class="botao principal">Jogar de novo</button>
+      </div>
+    </section>
+
+    <p class="dica">Dica: o programa também reconhece entradas inválidas. Experimente digitar uma letra ou deixar em branco.</p>
+
+    <footer class="rodape">
+      <p>O Python roda no seu próprio navegador (<a href="https://pyodide.org/">Pyodide</a>); nada do que você digita é enviado a servidor algum.</p>
+      <p><a href="main.py">Ver o código do jogo (main.py)</a> · <a href="https://github.com/pgshift006-maker/jogo-da-velha-web">Como esta página funciona</a></p>
+    </footer>
+  </main>
+
+  <script src="pyodide/pyodide.js"></script>
+  <script src="jogo.js"></script>
+</body>
+</html>
